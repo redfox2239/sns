@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ドリンクSNS-->
+        <!--ご飯SNS-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TimeLineViewController" customModule="sns" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6v-YL-mJe" id="dsK-U9-ybZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.71837022569444442" green="0.90934244791666663" blue="0.40807683017499996" alpha="0.6028199914383563" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ドリンクSNS" id="EMx-9U-pdq">
+                    <navigationItem key="navigationItem" title="ご飯SNS" id="EMx-9U-pdq">
                         <barButtonItem key="rightBarButtonItem" title="投稿" id="wQv-AC-F6J">
                             <connections>
                                 <segue destination="B0q-AH-VX8" kind="show" id="Olx-Fw-zWb"/>
