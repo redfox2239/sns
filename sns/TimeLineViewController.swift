@@ -14,10 +14,10 @@ import UIKit
 class TimeLineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var snsTableView: UITableView!
-    /********** レッスン2 ｍBaasから取得したでデータを格納する部品 **********/
+    /********** レッスン2-3 ｍBaasから取得したでデータを格納する部品 **********/
     // mbaasから取得したデータを用意する
 //    var data = [NCMBObject]()
-    /********** レッスン2 ｍBaasから取得したでデータを格納する部品 **********/
+    /********** レッスン2-3 ｍBaasから取得したでデータを格納する部品 **********/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
 //        query?.order(byDescending: "createDate")
 //        // mBaasからデータを取得する
 //        query?.findObjectsInBackground({ (values, error) in
+//            // データを取得した後どうするぅ？
 //            // エラーでなければ
 //            if error == nil {
 //                // self.dataに取得したデータをいれる
@@ -64,28 +65,21 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // セルの数は10個でお願いします。
         return 10
-        /********** レッスン2 mBaasから取得したデータの数でお願いします **********/
+        /********** レッスン2-4 mBaasから取得したデータの数でお願いします **********/
 //        return self.data.count
-        /********** レッスン2 mBaasから取得したデータの数でお願いします **********/
+        /********** レッスン2-4 mBaasから取得したデータの数でお願いします **********/
     }
     
     // 各行のセルの中身どうするぅ？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // snsTableViewの中の"cell"と名前つけた緑のセルをください
-        // let normalCell = self.snsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        // normalCellの中にあるtextLabelの中にテキストをいれる
-        // normalCell.textLabel?.text = "はらだれお"
-        // 上のnormalCellと名前つけたセルでお願いします
-        // return normalCell
-        
         /********** レッスン1 カスタムセルを取得するxibファイルの登録 **********/
         // snsTableViewの中の"TimeLineTableViewCell"と名前つけたカスタムセルをください
         let timeLineCell = self.snsTableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         // カスタムセルの中のtimeLineLabelという名前のLabelにテキストを入力する
         timeLineCell.timeLineLabel.text = "ブルーハワイなう(*´ω｀*)"
-        /********** レッスン2 mBaasから取得したデータをセルのラベルにいれる **********/
+        /********** レッスン2-4 mBaasから取得したデータをセルのラベルにいれる **********/
 //        timeLineCell.timeLineLabel.text = self.data[indexPath.row].object(forKey: "timeLineMessage") as! String
-        /********** レッスン2 mBaasから取得したデータをセルのラベルにいれる **********/
+        /********** レッスン2-4 mBaasから取得したデータをセルのラベルにいれる **********/
         // カスタムセルの中のtimeLineImageViewという名前のUIImageViewに画像を設置する
         timeLineCell.timeLineImageView.image = UIImage(named: "drink")
         // 上のcellと名前つけたセルでお願いします

@@ -21,6 +21,7 @@ class PostTextViewController: UIViewController {
 //        object?.setObject(timeLineMessage, forKey: "timeLineMessage")
 //        // データをmBaasに保存する
 //        object?.saveInBackground({ (error) in
+//            // データを保存したあとどうするぅ？
 //        })
         /********** レッスン2-1 メッセージを保存する **********/
     }
