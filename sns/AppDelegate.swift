@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         /********** レッスン2-2 mBaasに保存するための鍵をセットする **********/
-//        NCMB.setApplicationKey("f8864a87de9d67aea394dc7e1f55989d4ae7cc0bbc63858d35a2592dc9ec73a5", clientKey: "d239d3cea09a91c6ae8562f3ea66585efc9665eafaec5892b41820e77f96eb3f")
+        NCMB.setApplicationKey("f8864a87de9d67aea394dc7e1f55989d4ae7cc0bbc63858d35a2592dc9ec73a5", clientKey: "d239d3cea09a91c6ae8562f3ea66585efc9665eafaec5892b41820e77f96eb3f")
         /********** レッスン2-2 mBaasに保存するための鍵をセットする **********/
         return true
     }

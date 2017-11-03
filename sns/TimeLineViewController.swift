@@ -16,7 +16,7 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var snsTableView: UITableView!
     /********** レッスン2 ｍBaasから取得したでデータを格納する部品 **********/
     // mbaasから取得したデータを用意する
-//    var data = [NCMBObject]()
+    var data = [NCMBObject]()
     /********** レッスン2 ｍBaasから取得したでデータを格納する部品 **********/
     
     override func viewDidLoad() {
@@ -36,12 +36,33 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
         /********** レッスン1 xibファイルの登録 **********/
         
         /********** レッスン2-3 ｍBaasからデータを取得する **********/
+        // mBaasからデータを取得してくれる人を呼んでくる
+        let query = NCMBQuery(className: "timeLine")
+        // 最新日時順に取得する
+        query?.order(byDescending: "createDate")
+        // mBaasからデータを取得する
+        query?.findObjectsInBackground({ (values, error) in
+            // データを取得した後どうするぅ？
+            // エラーでなければ
+            if error == nil {
+                // self.dataに取得したデータをいれる
+                self.data = values as! [NCMBObject]
+                // tableViewと相談し直す
+                self.snsTableView.reloadData()
+            }
+        })
+        /********** レッスン2-3 ｍBaasからデータを取得する **********/
+    }
+    
+    /********** レッスン3-1 viewWillAppearのタイミングでｍBaasからデータを取得する **********/
+//    override func viewWillAppear(_ animated: Bool) {
 //        // mBaasからデータを取得してくれる人を呼んでくる
 //        let query = NCMBQuery(className: "timeLine")
 //        // 最新日時順に取得する
 //        query?.order(byDescending: "createDate")
 //        // mBaasからデータを取得する
 //        query?.findObjectsInBackground({ (values, error) in
+//            // データを取得した後どうするぅ？
 //            // エラーでなければ
 //            if error == nil {
 //                // self.dataに取得したデータをいれる
@@ -50,8 +71,8 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
 //                self.snsTableView.reloadData()
 //            }
 //        })
-        /********** レッスン2-3 ｍBaasからデータを取得する **********/
-    }
+//    }
+    /********** レッスン3-1 viewWillAppearのタイミングでｍBaasからデータを取得する **********/
     
     // tableViewとの相談↓
     // セクションの数どうするぅ？
@@ -62,36 +83,25 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
     
     // セクションの中のセルの数どうするぅ？
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // セルの数は10個でお願いします。
-        return 10
         /********** レッスン2 mBaasから取得したデータの数でお願いします **********/
-//        return self.data.count
+        return self.data.count
         /********** レッスン2 mBaasから取得したデータの数でお願いします **********/
     }
     
     // 各行のセルの中身どうするぅ？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // snsTableViewの中の"cell"と名前つけた緑のセルをください
-        // let normalCell = self.snsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        // normalCellの中にあるtextLabelの中にテキストをいれる
-        // normalCell.textLabel?.text = "はらだれお"
-        // 上のnormalCellと名前つけたセルでお願いします
-        // return normalCell
-        
         /********** レッスン1 カスタムセルを取得するxibファイルの登録 **********/
         // snsTableViewの中の"TimeLineTableViewCell"と名前つけたカスタムセルをください
         let timeLineCell = self.snsTableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         // カスタムセルの中のtimeLineLabelという名前のLabelにテキストを入力する
-        timeLineCell.timeLineLabel.text = "ブルーハワイなう(*´ω｀*)"
         /********** レッスン2 mBaasから取得したデータをセルのラベルにいれる **********/
-//        timeLineCell.timeLineLabel.text = self.data[indexPath.row].object(forKey: "timeLineMessage") as! String
+        timeLineCell.timeLineLabel.text = self.data[indexPath.row].object(forKey: "timeLineMessage") as! String
         /********** レッスン2 mBaasから取得したデータをセルのラベルにいれる **********/
         // カスタムセルの中のtimeLineImageViewという名前のUIImageViewに画像を設置する
         timeLineCell.timeLineImageView.image = UIImage(named: "drink")
         // 上のcellと名前つけたセルでお願いします
         return timeLineCell
         /********** レッスン1 カスタムセルを取得するxibファイルの登録 **********/
-
     }
     
     /********** レッスン1 cellの高さの相談を追加 **********/
