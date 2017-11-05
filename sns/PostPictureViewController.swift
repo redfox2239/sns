@@ -48,7 +48,7 @@ class PostPictureViewController: UIViewController {
     }
     
     @IBAction func tapSelectFromCamera(_ sender: Any) {
-        /********** レッスン3-x 写真から選ぶ画面を起動する **********/
+        /********** レッスン3-x カメラをを起動する **********/
 //        // もし、カメラが読み込み可能であれば
 //        if UIImagePickerController.isSourceTypeAvailable(.camera) {
 //            // UIImagePickerControllerにどこから写真を選ぶか指定する（カメラから）
@@ -56,7 +56,7 @@ class PostPictureViewController: UIViewController {
 //            // UIImagePickerControllerを表示する
 //            self.present(imgPC, animated: true, completion: nil)
 //        }
-        /********** レッスン3-x 写真から選ぶ画面を起動する **********/
+        /********** レッスン3-x カメラをを起動する **********/
     }
     
     @IBAction func tapPostCompleteButton(_ sender: Any) {
