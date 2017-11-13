@@ -72,7 +72,7 @@ class PostPictureViewController: UIViewController, UIImagePickerControllerDelega
 //        // ファイル名と保存するデータを渡す
 //        let file = NCMBFile.file(withName: "reoharada.png", data: data) as? NCMBFile
 //        /********** レッスン4-6 ファイル名にobjectIdを利用する **********/
-//        let file = NCMBFile.file(withName: "\(objectId).png", data: data) as? NCMBFile
+//        //let file = NCMBFile.file(withName: "\(objectId).png", data: data) as? NCMBFile
 //        /********** レッスン4-6 ファイル名にobjectIdを利用する **********/
 //        // ファイルを保存してもらう
 //        file?.saveInBackground({ (error) in
