@@ -28,7 +28,7 @@ class PostTextViewController: UIViewController {
                 // 移動先の画面を呼んでくる
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostPictureViewController") as! PostPictureViewController
                 /********** レッスン4-5 保存したobjectIdを次の画面に渡しておく **********/
-//                vc.objectId = object!.objectId
+                vc.objectId = object!.objectId
                 /********** レッスン4-5 保存したobjectIdを次の画面に渡しておく **********/
                 // 表示する
                 self.show(vc, sender: nil)

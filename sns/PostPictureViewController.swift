@@ -21,7 +21,7 @@ class PostPictureViewController: UIViewController, UIImagePickerControllerDelega
     var imgPC = UIImagePickerController()
     /********** レッスン3-3 iPhoneに保存してある写真を取得、カメラを起動してくれる部品を用意 **********/
     /********** レッスン4-4 objectIdを保存しておく部品を用意 **********/
-//    var objectId = ""
+    var objectId = ""
     /********** レッスン4-4 objectIdを保存しておく部品を用意 **********/
     
     override func viewDidLoad() {
@@ -66,25 +66,25 @@ class PostPictureViewController: UIViewController, UIImagePickerControllerDelega
             return
         }
         /********** レッスン4-1 選んだ写真を保存する **********/
-//        // 選んだ画像（UIImage）をデータに変更（Data）
-//        let data = UIImagePNGRepresentation(self.selectedImageView.image!)
-//        // ファイルを保存してくれる人（NCMBFile）を呼んでくる
-//        // ファイル名と保存するデータを渡す
-//        let file = NCMBFile.file(withName: "reoharada.png", data: data) as? NCMBFile
-//        /********** レッスン4-6 ファイル名にobjectIdを利用する **********/
-//        //let file = NCMBFile.file(withName: "\(objectId).png", data: data) as? NCMBFile
-//        /********** レッスン4-6 ファイル名にobjectIdを利用する **********/
-//        // ファイルを保存してもらう
-//        file?.saveInBackground({ (error) in
-//            // ファイル保存が終わったらどうするぅ？
-//            /********** レッスン4-2 保存が終わったあとの処理 **********/
-//            // もし、エラーでなかったら
-//            if error == nil {
-//                // 最初の画面に戻る
-//                self.navigationController?.popToRootViewController(animated: true)
-//            }
-//            /********** レッスン4-2 保存が終わったあとの処理 **********/
-//        })
+        // 選んだ画像（UIImage）をデータに変更（Data）
+        let data = UIImagePNGRepresentation(self.selectedImageView.image!)
+        // ファイルを保存してくれる人（NCMBFile）を呼んでくる
+        // ファイル名と保存するデータを渡す
+        //let file = NCMBFile.file(withName: "reoharada.png", data: data) as? NCMBFile
+        /********** レッスン4-6 ファイル名にobjectIdを利用する **********/
+        let file = NCMBFile.file(withName: "\(objectId).png", data: data) as? NCMBFile
+        /********** レッスン4-6 ファイル名にobjectIdを利用する **********/
+        // ファイルを保存してもらう
+        file?.saveInBackground({ (error) in
+            // ファイル保存が終わったらどうするぅ？
+            /********** レッスン4-2 保存が終わったあとの処理 **********/
+            // もし、エラーでなかったら
+            if error == nil {
+                // 最初の画面に戻る
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            /********** レッスン4-2 保存が終わったあとの処理 **********/
+        })
         /********** レッスン4-1 選んだ写真を保存する **********/
     }
     
