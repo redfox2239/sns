@@ -36,26 +36,6 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
         /********** レッスン1 xibファイルの登録 **********/
         
         /********** レッスン2-3 ｍBaasからデータを取得する **********/
-        // mBaasからデータを取得してくれる人を呼んでくる
-        let query = NCMBQuery(className: "timeLine")
-        // 最新日時順に取得する
-        query?.order(byDescending: "createDate")
-        // mBaasからデータを取得する
-        query?.findObjectsInBackground({ (values, error) in
-            // データを取得した後どうするぅ？
-            // エラーでなければ
-            if error == nil {
-                // self.dataに取得したデータをいれる
-                self.data = values as! [NCMBObject]
-                // tableViewと相談し直す
-                self.snsTableView.reloadData()
-            }
-        })
-        /********** レッスン2-3 ｍBaasからデータを取得する **********/
-    }
-    
-    /********** レッスン3-1 viewWillAppearのタイミングでｍBaasからデータを取得する **********/
-//    override func viewWillAppear(_ animated: Bool) {
 //        // mBaasからデータを取得してくれる人を呼んでくる
 //        let query = NCMBQuery(className: "timeLine")
 //        // 最新日時順に取得する
@@ -71,7 +51,27 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
 //                self.snsTableView.reloadData()
 //            }
 //        })
-//    }
+        /********** レッスン2-3 ｍBaasからデータを取得する **********/
+    }
+    
+    /********* レッスン3-1 viewWillAppearのタイミングでｍBaasからデータを取得する *********/
+    override func viewWillAppear(_ animated: Bool) {
+        // mBaasからデータを取得してくれる人を呼んでくる
+        let query = NCMBQuery(className: "timeLine")
+        // 最新日時順に取得する
+        query?.order(byDescending: "createDate")
+        // mBaasからデータを取得する
+        query?.findObjectsInBackground({ (values, error) in
+            // データを取得した後どうするぅ？
+            // エラーでなければ
+            if error == nil {
+                // self.dataに取得したデータをいれる
+                self.data = values as! [NCMBObject]
+                // tableViewと相談し直す
+                self.snsTableView.reloadData()
+            }
+        })
+    }
     /********** レッスン3-1 viewWillAppearのタイミングでｍBaasからデータを取得する **********/
     
     // tableViewとの相談↓
@@ -98,7 +98,23 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
         timeLineCell.timeLineLabel.text = self.data[indexPath.row].object(forKey: "timeLineMessage") as! String
         /********** レッスン2 mBaasから取得したデータをセルのラベルにいれる **********/
         // カスタムセルの中のtimeLineImageViewという名前のUIImageViewに画像を設置する
-        timeLineCell.timeLineImageView.image = UIImage(named: "drink")
+         timeLineCell.timeLineImageView.image = UIImage(named: "drink")
+//        /********** レッスン4-3 mBaasから画像を取得して、データをいれる **********/
+//        // 保存されてるデータを取得してくれる人（NCMBFile）を用意する
+//        let file = NCMBFile.file(withName: "reoharada.png", data: nil) as! NCMBFile
+//        /********** レッスン4-7 mBaasから画像を取得して、データをいれる **********/
+//        //let file = NCMBFile.file(withName: "\(self.data[indexPath.row].objectId!).png", data: nil) as! NCMBFile
+//        /********** レッスン4-7 mBaasから画像を取得して、データをいれる **********/
+//        // データを取得してもらう
+//        file.getDataInBackground { (data, error) in
+//            // データを取得したらどうするぅ？
+//            // もし、エラーでなかったら
+//            if error == nil {
+//                // セルの画像を設定する
+//                timeLineCell.timeLineImageView.image = UIImage(data: data!)
+//            }
+//        }
+        /********** レッスン4-3 mBaasから画像を取得して、データをいれる **********/
         // 上のcellと名前つけたセルでお願いします
         return timeLineCell
         /********** レッスン1 カスタムセルを取得するxibファイルの登録 **********/

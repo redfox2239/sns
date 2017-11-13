@@ -23,13 +23,16 @@ class PostTextViewController: UIViewController {
         object?.saveInBackground({ (error) in
             // データが保存し終わったあとどうするぅ？
             /********** レッスン3-2 写真投稿の画面に移動する **********/
-//            // エラーでなかったら
-//            if error == nil {
-//                // 移動先の画面を呼んでくる
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostPictureViewController") as! PostPictureViewController
-//                // 表示する
-//                self.show(vc, sender: nil)
-//            }
+            // エラーでなかったら
+            if error == nil {
+                // 移動先の画面を呼んでくる
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostPictureViewController") as! PostPictureViewController
+                /********** レッスン4-5 保存したobjectIdを次の画面に渡しておく **********/
+//                vc.objectId = object!.objectId
+                /********** レッスン4-5 保存したobjectIdを次の画面に渡しておく **********/
+                // 表示する
+                self.show(vc, sender: nil)
+            }
             /********** レッスン3-2 写真投稿の画面に移動する **********/
         })
         /********** レッスン2-1 メッセージを保存する **********/
