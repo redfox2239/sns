@@ -99,7 +99,7 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
         /********** レッスン2 mBaasから取得したデータをセルのラベルにいれる **********/
         // カスタムセルの中のtimeLineImageViewという名前のUIImageViewに画像を設置する
          timeLineCell.timeLineImageView.image = UIImage(named: "drink")
-//        /********** レッスン4-3 mBaasから画像を取得して、データをいれる **********/
+        /********** レッスン4-3 mBaasから画像を取得して、データをいれる **********/
 //        // 保存されてるデータを取得してくれる人（NCMBFile）を用意する
 //        let file = NCMBFile.file(withName: "reoharada.png", data: nil) as! NCMBFile
 //        /********** レッスン4-7 mBaasから画像を取得して、データをいれる **********/
